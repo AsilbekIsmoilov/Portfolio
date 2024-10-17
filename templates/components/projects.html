@@ -1,0 +1,49 @@
+{% load static %}
+{% load portfolio_tags %}
+
+  <section id="work" class="portfolio-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Projects
+            </h3>
+            <p class="subtitle-a">
+            </p>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      {% get_projects as projects %}
+      {% for project in projects %}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="work-box">
+            <a href="{{project.get_photo}}" data-lightbox="gallery-mf">
+              <div class="work-img">
+                <img src="{{project.get_photo}}" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">{{project.title}}</h2>
+                    <div class="w-more">
+                      <a href="https://github.com/AsilbekIsmoilov?tab=repositories">{{project.link}}</a> / <span class="w-date">{{project.created_at}}</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <span class="ion-ios-plus-outline"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </section>

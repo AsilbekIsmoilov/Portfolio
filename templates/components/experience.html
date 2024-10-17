@@ -1,0 +1,47 @@
+{% load static %}
+{% load portfolio_tags %}
+
+
+<section id="work" class="portfolio-mf sect-pt4 route">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        Experience
+                    </h3>
+                    <p class="subtitle-a">
+
+                    </p>
+                    <div class="line-mf"></div>
+                </div>
+            </div>
+        </div>
+        {% get_experience as experiences %}
+        {% for experience in experiences %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="work-box">
+                    <div class="work-content">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2 class="w-title">{{experience.title}}</h2>
+                                <h2 class="w-title">{{experience.job_name}}</h2>
+                                <div class="w-more">
+                                    <span class="">{{experience.job_place}}</span> / <span
+                                        class="w-date">from: {{experience.start_year}}/ to: </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="w-like">
+                                    <!--                                        <span class="ion-ios-plus-outline"></span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
