@@ -2,7 +2,7 @@
 {% load portfolio_tags %}
 
 
-<section id="work" class="portfolio-mf sect-pt4 route">
+<section id="experience" class="portfolio-mf sect-pt4 route">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -17,9 +17,9 @@
                 </div>
             </div>
         </div>
-        {% get_experience as experiences %}
-        {% for experience in experiences %}
         <div class="row">
+            {% get_experience as experiences %}
+            {% for experience in experiences %}
             <div class="col-md-4">
                 <div class="work-box">
                     <div class="work-content">
@@ -41,7 +41,8 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
     </div>
 </section>
